@@ -1,0 +1,38 @@
+.topbar {
+  background: #ffffff;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar h2 {
+  margin: 0;
+  color: #111827;
+}
+
+.topbar p {
+  margin-top: 4px;
+  color: #6b7280;
+}
+
+.topbar-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.topbar-user span {
+  font-weight: 600;
+  color: #111827;
+}
+
+.topbar-user button {
+  background: #0f172a;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}

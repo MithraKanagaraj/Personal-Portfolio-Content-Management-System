@@ -1,0 +1,32 @@
+.testimonials {
+  background: #0f1730;
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.testimonials__card {
+  background: #131d3b;
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.testimonials__card p {
+  color: #d5e0f7;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.testimonials__card h4 {
+  color: #67e8f9;
+}
+
+@media (max-width: 768px) {
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+}

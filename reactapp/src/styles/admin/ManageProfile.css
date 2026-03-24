@@ -1,0 +1,42 @@
+.panel-page {
+  background: transparent;
+}
+
+.panel-page h2 {
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.panel-form {
+  background: #fff;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.panel-form input,
+.panel-form textarea,
+.panel-form select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  outline: none;
+}
+
+.panel-form button {
+  margin-top: 16px;
+  background: #0f172a;
+  color: #fff;
+  border: none;
+  padding: 13px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}

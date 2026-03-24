@@ -1,0 +1,43 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f7fb;
+}
+
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-content {
+  padding: 24px;
+}
+@media (max-width: 992px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .dashboard-cards,
+  .dashboard-widgets,
+  .theme-grid,
+  .messages-grid,
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .small-form {
+    grid-template-columns: 1fr !important;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}

@@ -1,0 +1,33 @@
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #0f172a, #111827);
+  color: #fff;
+  padding: 24px 18px;
+  min-height: 100vh;
+}
+
+.sidebar-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #38bdf8;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-nav a {
+  color: #dbe4f0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+}

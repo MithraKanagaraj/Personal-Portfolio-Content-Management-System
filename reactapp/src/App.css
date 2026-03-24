@@ -1,0 +1,14 @@
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.section-spacing {
+  padding: 90px 8%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}

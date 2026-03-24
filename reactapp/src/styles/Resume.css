@@ -1,0 +1,33 @@
+.resume {
+  background: #0b1020;
+}
+
+.resume__box {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  background: #121a35;
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.resume__box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+}
+
+.resume__box p {
+  color: #bcc9e2;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+.resume__btn {
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #22d3ee, #3b82f6);
+  color: #08111f;
+  font-weight: 700;
+}
