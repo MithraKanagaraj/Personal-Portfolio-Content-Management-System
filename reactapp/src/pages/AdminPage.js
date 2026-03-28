@@ -15,13 +15,13 @@ function AdminPage() {
     <AdminLayout>
       <Routes>
         <Route path="/" element={<DashboardHome />} />
-        <Route path="/profile" element={<ManageProfile />} />
-        <Route path="/projects" element={<ManageProjects />} />
-        <Route path="/skills" element={<ManageSkills />} />
-        <Route path="/resume" element={<ManageResume />} />
-        <Route path="/contact" element={<ManageContact />} />
-        <Route path="/theme" element={<ManageTheme />} />
-        <Route path="/messages" element={<ManageMessages />} />
+        <Route path="profile" element={<ManageProfile />} />
+        <Route path="projects" element={<ManageProjects />} />
+        <Route path="skills" element={<ManageSkills />} />
+        <Route path="resume" element={<ManageResume />} />
+        <Route path="contact" element={<ManageContact />} />
+        <Route path="theme" element={<ManageTheme />} />
+        <Route path="messages" element={<ManageMessages />} />
       </Routes>
     </AdminLayout>
   );

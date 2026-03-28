@@ -23,12 +23,17 @@ public class ProfileController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<ProfileResponse> saveProfile(@RequestBody ProfileRequest request,
-                                                       Principal principal) {
-        return ResponseEntity.ok(
-                profileService.createOrUpdateProfile(request, principal.getName())
-        );
+public ResponseEntity<ProfileResponse> saveProfile(@RequestBody ProfileRequest request,
+                                                   Principal principal) {
+
+    if (principal == null) {
+        throw new RuntimeException("User not authenticated. Please login first.");
     }
+
+    return ResponseEntity.ok(
+            profileService.createOrUpdateProfile(request, principal.getName())
+    );
+}
 
     @GetMapping("/me")
     public ResponseEntity<ProfileResponse> getMyProfile(Principal principal) {
