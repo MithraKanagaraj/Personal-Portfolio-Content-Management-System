@@ -4,7 +4,7 @@
 }
 
 .section-title p {
-  color: #67e8f9;
+  color: var(--portfolio-accent);
   font-weight: 600;
   margin-bottom: 8px;
   letter-spacing: 0.8px;
@@ -14,5 +14,5 @@
 
 .section-title h2 {
   font-size: 2.2rem;
-  color: #ffffff;
+  color: var(--portfolio-text-strong);
 }

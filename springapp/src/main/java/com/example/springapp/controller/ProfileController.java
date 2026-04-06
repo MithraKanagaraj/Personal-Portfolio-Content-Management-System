@@ -1,19 +1,22 @@
 package com.example.springapp.controller;
 
-
-
-import com.example.springapp.dto.ProfileRequest;
-import com.example.springapp.dto.ProfileResponse;
-import com.example.springapp.service.ProfileService;
-
 import java.security.Principal;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.example.springapp.entity.Profile;
+import com.example.springapp.service.ProfileService;
 
 @RestController
 @RequestMapping("/api/profile")
-@CrossOrigin("*")
 public class ProfileController {
 
     private final ProfileService profileService;
@@ -23,29 +26,24 @@ public class ProfileController {
     }
 
     @PostMapping("/save")
-public ResponseEntity<ProfileResponse> saveProfile(@RequestBody ProfileRequest request,
-                                                   Principal principal) {
-
-    if (principal == null) {
-        throw new RuntimeException("User not authenticated. Please login first.");
+    public ResponseEntity<Profile> saveProfile(@RequestBody Profile profile, Principal principal) {
+        return ResponseEntity.ok(profileService.createOrUpdateProfile(profile, getAuthenticatedEmail(principal)));
     }
 
-    return ResponseEntity.ok(
-            profileService.createOrUpdateProfile(request, principal.getName())
-    );
-}
-
     @GetMapping("/me")
-    public ResponseEntity<ProfileResponse> getMyProfile(Principal principal) {
-        return ResponseEntity.ok(
-                profileService.getMyProfile(principal.getName())
-        );
+    public ResponseEntity<Profile> getMyProfile(Principal principal) {
+        return ResponseEntity.ok(profileService.getMyProfile(getAuthenticatedEmail(principal)));
     }
 
     @GetMapping("/{username}")
-    public ResponseEntity<ProfileResponse> getPublicProfile(@PathVariable String username) {
-        return ResponseEntity.ok(
-                profileService.getPublicProfile(username)
-        );
+    public ResponseEntity<Profile> getPublicProfile(@PathVariable String username) {
+        return ResponseEntity.ok(profileService.getPublicProfile(username));
+    }
+
+    private String getAuthenticatedEmail(Principal principal) {
+        if (principal == null || principal.getName() == null || principal.getName().isBlank()) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not authenticated");
+        }
+        return principal.getName();
     }
 }

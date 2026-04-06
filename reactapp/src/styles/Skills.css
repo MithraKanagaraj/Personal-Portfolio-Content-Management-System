@@ -1,5 +1,5 @@
 .skills {
-  background: #0b1020;
+  background: var(--portfolio-bg);
 }
 
 .skills__grid {
@@ -9,10 +9,10 @@
 }
 
 .skills__card {
-  background: #121a35;
+  background: var(--portfolio-card);
   padding: 22px;
   border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid var(--portfolio-border);
 }
 
 .skills__head {
@@ -26,14 +26,14 @@
 }
 
 .skills__head span {
-  color: #67e8f9;
+  color: var(--portfolio-accent);
   font-weight: 700;
 }
 
 .skills__bar {
   width: 100%;
   height: 10px;
-  background: #202b52;
+  background: var(--portfolio-skill-track);
   border-radius: 30px;
   overflow: hidden;
 }
@@ -41,7 +41,7 @@
 .skills__fill {
   height: 100%;
   border-radius: 30px;
-  background: linear-gradient(135deg, #22d3ee, #3b82f6);
+  background: var(--portfolio-cta-gradient);
 }
 
 @media (max-width: 768px) {

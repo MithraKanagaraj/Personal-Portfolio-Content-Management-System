@@ -1,6 +1,14 @@
 package com.example.springapp.entity;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "users")
@@ -8,6 +16,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private Long id;
 
     @Column(nullable = false)
@@ -19,22 +28,16 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @JsonIgnore
     @Column(nullable = false)
+    @Schema(accessMode = Schema.AccessMode.WRITE_ONLY)
     private String password;
 
     @Column(nullable = false)
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private String role = "USER";
 
     public User() {
-    }
-
-    public User(Long id, String fullName, String username, String email, String password, String role) {
-        this.id = id;
-        this.fullName = fullName;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.role = role;
     }
 
     public Long getId() {

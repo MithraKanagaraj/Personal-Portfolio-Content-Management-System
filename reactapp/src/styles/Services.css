@@ -1,5 +1,5 @@
 .services {
-  background: #0b1020;
+  background: var(--portfolio-bg);
 }
 
 .services__grid {
@@ -9,10 +9,10 @@
 }
 
 .services__card {
-  background: #121a35;
+  background: var(--portfolio-card);
   padding: 24px;
   border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid var(--portfolio-border);
   transition: 0.3s ease;
 }
 
@@ -22,11 +22,11 @@
 
 .services__card h3 {
   margin-bottom: 12px;
-  color: #fff;
+  color: var(--portfolio-text-strong);
 }
 
 .services__card p {
-  color: #bcc9e2;
+  color: var(--portfolio-text-muted);
   line-height: 1.7;
 }
 

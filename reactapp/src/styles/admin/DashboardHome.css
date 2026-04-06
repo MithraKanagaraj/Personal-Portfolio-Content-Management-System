@@ -45,3 +45,9 @@
   color: #6b7280;
   line-height: 1.7;
 }
+
+.portfolio-preview-widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -1,33 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { deleteMessage, getMessages } from "../../api/messageApi";
 import "../../styles/admin/ManageMessages.css";
 
 function ManageMessages() {
-  const messages = [
-    {
-      name: "Arun",
-      email: "arun@gmail.com",
-      message: "I liked your portfolio. Let's connect."
-    },
-    {
-      name: "Divya",
-      email: "divya@gmail.com",
-      message: "Your projects look impressive."
+  const [messages, setMessages] = useState([]);
+
+  const loadMessages = async () => {
+    try {
+      const data = await getMessages();
+      setMessages(data);
+    } catch (error) {
+      console.error(error);
     }
-  ];
+  };
+
+  useEffect(() => {
+    loadMessages();
+  }, []);
+
+  const handleDelete = async (id) => {
+    try {
+      await deleteMessage(id);
+      loadMessages();
+    } catch (error) {
+      console.error(error);
+      alert("Failed to delete message");
+    }
+  };
 
   return (
     <div className="panel-page">
       <h2>Visitor Messages</h2>
 
       <div className="messages-grid">
-        {messages.map((msg, index) => (
-          <div className="message-card" key={index}>
-            <h3>{msg.name}</h3>
-            <p className="msg-email">{msg.email}</p>
-            <p>{msg.message}</p>
-            <button className="danger">Delete</button>
+        {messages.length > 0 ? (
+          messages.map((msg) => (
+            <div className="message-card" key={msg.id}>
+              <h3>{msg.senderName}</h3>
+              <p className="msg-email">{msg.senderEmail}</p>
+              <p>{msg.message}</p>
+              <button className="danger" onClick={() => handleDelete(msg.id)}>Delete</button>
+            </div>
+          ))
+        ) : (
+          <div className="message-card">
+            <h3>No messages yet</h3>
+            <p className="msg-email">Your contact form submissions will appear here.</p>
           </div>
-        ))}
+        )}
       </div>
     </div>
   );

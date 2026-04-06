@@ -1,5 +1,5 @@
 .testimonials {
-  background: #0f1730;
+  background: var(--portfolio-surface-alt);
 }
 
 .testimonials__grid {
@@ -9,20 +9,20 @@
 }
 
 .testimonials__card {
-  background: #131d3b;
+  background: var(--portfolio-card-alt);
   padding: 28px;
   border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid var(--portfolio-border);
 }
 
 .testimonials__card p {
-  color: #d5e0f7;
+  color: var(--portfolio-text-card);
   line-height: 1.8;
   margin-bottom: 14px;
 }
 
 .testimonials__card h4 {
-  color: #67e8f9;
+  color: var(--portfolio-accent);
 }
 
 @media (max-width: 768px) {

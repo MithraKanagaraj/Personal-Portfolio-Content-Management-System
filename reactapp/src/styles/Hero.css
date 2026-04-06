@@ -1,8 +1,8 @@
 .hero {
   background:
-    radial-gradient(circle at top left, rgba(103, 232, 249, 0.15), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.15), transparent 28%),
-    #0b1020;
+    radial-gradient(circle at top left, var(--portfolio-highlight-soft), transparent 30%),
+    radial-gradient(circle at bottom right, var(--portfolio-highlight-strong), transparent 28%),
+    var(--portfolio-bg);
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
 }
 
 .hero__tag {
-  color: #67e8f9;
+  color: var(--portfolio-accent);
   margin-bottom: 14px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -26,15 +26,15 @@
   font-size: 3.3rem;
   line-height: 1.2;
   margin-bottom: 18px;
-  color: #fff;
+  color: var(--portfolio-text-strong);
 }
 
 .hero__content h1 span {
-  color: #67e8f9;
+  color: var(--portfolio-accent);
 }
 
 .hero__desc {
-  color: #b8c4dd;
+  color: var(--portfolio-text-muted);
   font-size: 1.05rem;
   line-height: 1.8;
   max-width: 650px;
@@ -56,8 +56,8 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #22d3ee, #3b82f6);
-  color: #08111f;
+  background: var(--portfolio-cta-gradient);
+  color: var(--portfolio-accent-contrast);
 }
 
 .btn-primary:hover {
@@ -65,12 +65,12 @@
 }
 
 .btn-outline {
-  border: 1px solid #67e8f9;
-  color: #67e8f9;
+  border: 1px solid var(--portfolio-accent);
+  color: var(--portfolio-accent);
 }
 
 .btn-outline:hover {
-  background: rgba(103, 232, 249, 0.08);
+  background: var(--portfolio-outline-soft);
 }
 
 .hero__stats {
@@ -81,12 +81,12 @@
 }
 
 .hero__stats h3 {
-  color: #fff;
+  color: var(--portfolio-text-strong);
   font-size: 1.7rem;
 }
 
 .hero__stats p {
-  color: #9fb0d0;
+  color: var(--portfolio-text-soft);
   font-size: 0.95rem;
 }
 
@@ -98,11 +98,11 @@
 .hero__glass {
   width: 100%;
   max-width: 420px;
-  background: rgba(19, 27, 53, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--portfolio-glass);
+  border: 1px solid var(--portfolio-border-strong);
   padding: 32px;
   border-radius: 24px;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--portfolio-shadow);
 }
 
 .hero__glass h3 {
@@ -111,7 +111,7 @@
 }
 
 .hero__glass p {
-  color: #b7c4df;
+  color: var(--portfolio-text-muted);
   margin-bottom: 18px;
   line-height: 1.7;
 }
@@ -122,10 +122,10 @@
 }
 
 .hero__glass li {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--portfolio-glass-item);
   padding: 12px 14px;
   border-radius: 10px;
-  color: #dce7fb;
+  color: var(--portfolio-text-card);
 }
 
 @media (max-width: 900px) {

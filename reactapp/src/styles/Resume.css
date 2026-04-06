@@ -1,15 +1,15 @@
 .resume {
-  background: #0b1020;
+  background: var(--portfolio-bg);
 }
 
 .resume__box {
   text-align: center;
   max-width: 800px;
   margin: auto;
-  background: #121a35;
+  background: var(--portfolio-card);
   padding: 40px;
   border-radius: 24px;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid var(--portfolio-border);
 }
 
 .resume__box h3 {
@@ -18,7 +18,7 @@
 }
 
 .resume__box p {
-  color: #bcc9e2;
+  color: var(--portfolio-text-muted);
   line-height: 1.8;
   margin-bottom: 22px;
 }
@@ -27,7 +27,7 @@
   display: inline-block;
   padding: 13px 24px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #22d3ee, #3b82f6);
-  color: #08111f;
+  background: var(--portfolio-cta-gradient);
+  color: var(--portfolio-accent-contrast);
   font-weight: 700;
 }

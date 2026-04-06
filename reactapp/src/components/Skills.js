@@ -2,7 +2,7 @@ import React from "react";
 import SectionTitle from "./SectionTitle";
 import "../styles/Skills.css";
 
-const skills = [
+const fallbackSkills = [
   { name: "React.js", level: "90%" },
   { name: "JavaScript", level: "88%" },
   { name: "Java", level: "85%" },
@@ -11,20 +11,41 @@ const skills = [
   { name: "MySQL", level: "78%" }
 ];
 
-function Skills() {
+const levelToPercent = {
+  beginner: "55%",
+  intermediate: "75%",
+  advanced: "90%",
+  expert: "96%"
+};
+
+function normalizeSkill(skill) {
+  const rawLevel = skill?.level || "Intermediate";
+  const mappedLevel = levelToPercent[rawLevel.toLowerCase()] || rawLevel;
+  const width = mappedLevel.endsWith("%") ? mappedLevel : "75%";
+
+  return {
+    name: skill?.name || "Skill",
+    label: rawLevel,
+    width,
+  };
+}
+
+function Skills({ skills = [] }) {
+  const visibleSkills = (skills.length > 0 ? skills : fallbackSkills).map(normalizeSkill);
+
   return (
     <section className="skills section-spacing" id="skills">
       <div className="container">
         <SectionTitle subtitle="Expertise" title="Technical Skills" />
         <div className="skills__grid">
-          {skills.map((skill, index) => (
-            <div className="skills__card" key={index}>
+          {visibleSkills.map((skill, index) => (
+            <div className="skills__card" key={`${skill.name}-${index}`}>
               <div className="skills__head">
                 <h4>{skill.name}</h4>
-                <span>{skill.level}</span>
+                <span>{skill.label}</span>
               </div>
               <div className="skills__bar">
-                <div className="skills__fill" style={{ width: skill.level }}></div>
+                <div className="skills__fill" style={{ width: skill.width }}></div>
               </div>
             </div>
           ))}

@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import "../styles/Navbar.css";
 
-function Navbar() {
+function Navbar({ displayName }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="navbar">
-      <div className="navbar__logo">Mithra<span>Portfolio</span></div>
+      <div className="navbar__logo">
+        {displayName || "Mithra"}
+        <span>Portfolio</span>
+      </div>
 
       <nav className={`navbar__links ${menuOpen ? "active" : ""}`}>
         <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>

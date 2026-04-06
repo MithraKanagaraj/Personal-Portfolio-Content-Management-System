@@ -2,43 +2,51 @@ import React from "react";
 import SectionTitle from "./SectionTitle";
 import "../styles/Projects.css";
 
-const projects = [
+const fallbackProjects = [
   {
     title: "Personal Portfolio CMS",
     description:
       "A full stack portfolio management platform with admin dashboard, dynamic content editing, and responsive frontend.",
-    tech: "React, Node.js, Express, MongoDB"
+    techStack: "React, Node.js, Express, MongoDB",
+    liveLink: "/",
+    githubLink: "/"
   },
   {
     title: "AI Skin Care Recommendation",
     description:
       "A recommendation-based application that analyzes user needs and suggests personalized products.",
-    tech: "React, Python, ML, API Integration"
+    techStack: "React, Python, ML, API Integration",
+    liveLink: "/",
+    githubLink: "/"
   },
   {
     title: "Feedback and Rating System",
     description:
       "A product review system with ratings, comments, and admin moderation features.",
-    tech: "React, Spring Boot, MySQL"
+    techStack: "React, Spring Boot, MySQL",
+    liveLink: "/",
+    githubLink: "/"
   }
 ];
 
-function Projects() {
+function Projects({ projects = [] }) {
+  const visibleProjects = projects.length > 0 ? projects : fallbackProjects;
+
   return (
     <section className="projects section-spacing" id="projects">
       <div className="container">
         <SectionTitle subtitle="Portfolio" title="Featured Projects" />
         <div className="projects__grid">
-          {projects.map((project, index) => (
-            <div className="projects__card" key={index}>
+          {visibleProjects.map((project, index) => (
+            <div className="projects__card" key={project.id || `${project.title}-${index}`}>
               <div className="projects__image"></div>
               <div className="projects__content">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                <span>{project.tech}</span>
+                <span>{project.techStack || project.tech}</span>
                 <div className="projects__buttons">
-                  <a href="/">Live Demo</a>
-                  <a href="/">GitHub</a>
+                  <a href={project.liveLink || "/"} target="_blank" rel="noreferrer">Live Demo</a>
+                  <a href={project.githubLink || "/"} target="_blank" rel="noreferrer">GitHub</a>
                 </div>
               </div>
             </div>

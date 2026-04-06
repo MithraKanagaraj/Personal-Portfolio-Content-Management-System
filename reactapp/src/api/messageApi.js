@@ -9,3 +9,8 @@ export const getMessages = async () => {
   const response = await axiosInstance.get("/api/messages");
   return response.data;
 };
+
+export const deleteMessage = async (id) => {
+  const response = await axiosInstance.delete(`/api/messages/${id}`);
+  return response.data;
+};

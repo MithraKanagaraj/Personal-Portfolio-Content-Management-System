@@ -1,5 +1,15 @@
 package com.example.springapp.entity;
-import jakarta.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "profiles")
@@ -15,9 +25,7 @@ public class Profile {
     private String bio;
 
     private String profileImage;
-
     private String location;
-
     private String githubLink;
     private String linkedinLink;
     private String twitterLink;
@@ -25,24 +33,10 @@ public class Profile {
 
     @OneToOne
     @JoinColumn(name = "user_id", nullable = false, unique = true)
+    @JsonIgnoreProperties({"password"})
     private User user;
 
     public Profile() {
-    }
-
-    public Profile(Long id, String headline, String bio, String profileImage, String location,
-                   String githubLink, String linkedinLink, String twitterLink,
-                   String portfolioTheme, User user) {
-        this.id = id;
-        this.headline = headline;
-        this.bio = bio;
-        this.profileImage = profileImage;
-        this.location = location;
-        this.githubLink = githubLink;
-        this.linkedinLink = linkedinLink;
-        this.twitterLink = twitterLink;
-        this.portfolioTheme = portfolioTheme;
-        this.user = user;
     }
 
     public Long getId() {

@@ -1,8 +1,8 @@
 .footer {
-  background: #09101d;
+  background: var(--portfolio-footer);
   padding: 36px 8%;
   text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid var(--portfolio-border);
 }
 
 .footer__wrapper h3 {
@@ -10,7 +10,7 @@
 }
 
 .footer__wrapper p {
-  color: #aebbd7;
+  color: var(--portfolio-text-footer);
   margin-bottom: 16px;
 }
 
@@ -23,10 +23,10 @@
 }
 
 .footer__links a {
-  color: #67e8f9;
+  color: var(--portfolio-accent);
 }
 
 .footer__wrapper span {
-  color: #8ea1c6;
+  color: var(--portfolio-text-footer-soft);
   font-size: 0.95rem;
 }

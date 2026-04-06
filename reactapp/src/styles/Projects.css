@@ -1,5 +1,5 @@
 .projects {
-  background: #0f1730;
+  background: var(--portfolio-surface-alt);
 }
 
 .projects__grid {
@@ -9,10 +9,10 @@
 }
 
 .projects__card {
-  background: #131d3b;
+  background: var(--portfolio-card-alt);
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid var(--portfolio-border);
   transition: 0.3s ease;
 }
 
@@ -22,7 +22,7 @@
 
 .projects__image {
   height: 200px;
-  background: linear-gradient(135deg, rgba(34,211,238,0.3), rgba(59,130,246,0.25));
+  background: var(--portfolio-project-image);
 }
 
 .projects__content {
@@ -34,14 +34,14 @@
 }
 
 .projects__content p {
-  color: #bcc9e2;
+  color: var(--portfolio-text-muted);
   line-height: 1.7;
   margin-bottom: 14px;
 }
 
 .projects__content span {
   display: inline-block;
-  color: #67e8f9;
+  color: var(--portfolio-accent);
   margin-bottom: 18px;
   font-weight: 600;
 }
@@ -54,13 +54,13 @@
 .projects__buttons a {
   padding: 10px 16px;
   border-radius: 10px;
-  background: #1a274d;
-  color: #fff;
+  background: var(--portfolio-button-bg);
+  color: var(--portfolio-text-strong);
   transition: 0.3s ease;
 }
 
 .projects__buttons a:hover {
-  background: #223567;
+  background: var(--portfolio-button-hover);
 }
 
 @media (max-width: 992px) {

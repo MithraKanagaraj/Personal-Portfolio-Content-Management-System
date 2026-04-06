@@ -4,14 +4,131 @@
   box-sizing: border-box;
 }
 
+:root {
+  --portfolio-bg: #0b1020;
+  --portfolio-surface-alt: #0f1730;
+  --portfolio-card: #121a35;
+  --portfolio-card-alt: #131d3b;
+  --portfolio-footer: #09101d;
+  --portfolio-nav: rgba(10, 15, 31, 0.92);
+  --portfolio-nav-mobile: #121a35;
+  --portfolio-text: #f4f7fb;
+  --portfolio-text-strong: #ffffff;
+  --portfolio-text-muted: #bcc9e2;
+  --portfolio-text-soft: #9fb0d0;
+  --portfolio-text-card: #dce7fb;
+  --portfolio-text-footer: #aebbd7;
+  --portfolio-text-footer-soft: #8ea1c6;
+  --portfolio-accent: #67e8f9;
+  --portfolio-accent-strong: #3b82f6;
+  --portfolio-accent-contrast: #08111f;
+  --portfolio-border: rgba(255, 255, 255, 0.06);
+  --portfolio-border-strong: rgba(255, 255, 255, 0.08);
+  --portfolio-button-bg: #1a274d;
+  --portfolio-button-hover: #223567;
+  --portfolio-field-bg: #0d1430;
+  --portfolio-field-border: #25345f;
+  --portfolio-skill-track: #202b52;
+  --portfolio-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  --portfolio-glass: rgba(19, 27, 53, 0.85);
+  --portfolio-glass-item: rgba(255, 255, 255, 0.04);
+  --portfolio-highlight-soft: rgba(103, 232, 249, 0.15);
+  --portfolio-highlight-strong: rgba(59, 130, 246, 0.15);
+  --portfolio-outline-soft: rgba(103, 232, 249, 0.08);
+  --portfolio-project-image: linear-gradient(
+    135deg,
+    rgba(34, 211, 238, 0.3),
+    rgba(59, 130, 246, 0.25)
+  );
+  --portfolio-cta-gradient: linear-gradient(135deg, #22d3ee, #3b82f6);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #0b1020;
-  color: #f4f7fb;
+  background: var(--portfolio-bg);
+  color: var(--portfolio-text);
+}
+
+body[data-portfolio-theme="light-minimal"] {
+  --portfolio-bg: #f7f8fb;
+  --portfolio-surface-alt: #eef2f7;
+  --portfolio-card: #ffffff;
+  --portfolio-card-alt: #ffffff;
+  --portfolio-footer: #e8edf4;
+  --portfolio-nav: rgba(255, 255, 255, 0.92);
+  --portfolio-nav-mobile: #ffffff;
+  --portfolio-text: #1f2937;
+  --portfolio-text-strong: #111827;
+  --portfolio-text-muted: #4b5563;
+  --portfolio-text-soft: #6b7280;
+  --portfolio-text-card: #374151;
+  --portfolio-text-footer: #4b5563;
+  --portfolio-text-footer-soft: #6b7280;
+  --portfolio-accent: #2563eb;
+  --portfolio-accent-strong: #0ea5e9;
+  --portfolio-accent-contrast: #ffffff;
+  --portfolio-border: rgba(15, 23, 42, 0.08);
+  --portfolio-border-strong: rgba(15, 23, 42, 0.08);
+  --portfolio-button-bg: #e0e7ff;
+  --portfolio-button-hover: #c7d2fe;
+  --portfolio-field-bg: #ffffff;
+  --portfolio-field-border: #cbd5e1;
+  --portfolio-skill-track: #e5e7eb;
+  --portfolio-shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
+  --portfolio-glass: rgba(255, 255, 255, 0.92);
+  --portfolio-glass-item: rgba(37, 99, 235, 0.08);
+  --portfolio-highlight-soft: rgba(14, 165, 233, 0.12);
+  --portfolio-highlight-strong: rgba(37, 99, 235, 0.1);
+  --portfolio-outline-soft: rgba(37, 99, 235, 0.08);
+  --portfolio-project-image: linear-gradient(
+    135deg,
+    rgba(14, 165, 233, 0.18),
+    rgba(37, 99, 235, 0.14)
+  );
+  --portfolio-cta-gradient: linear-gradient(135deg, #0ea5e9, #2563eb);
+}
+
+body[data-portfolio-theme="blue-gradient"] {
+  --portfolio-bg: #071326;
+  --portfolio-surface-alt: #0b1c37;
+  --portfolio-card: rgba(15, 35, 67, 0.9);
+  --portfolio-card-alt: rgba(17, 40, 77, 0.92);
+  --portfolio-footer: #06101f;
+  --portfolio-nav: rgba(7, 19, 38, 0.9);
+  --portfolio-nav-mobile: #0d2344;
+  --portfolio-text: #e6f1ff;
+  --portfolio-text-strong: #ffffff;
+  --portfolio-text-muted: #bfd3f4;
+  --portfolio-text-soft: #9eb6da;
+  --portfolio-text-card: #edf4ff;
+  --portfolio-text-footer: #bfd3f4;
+  --portfolio-text-footer-soft: #9eb6da;
+  --portfolio-accent: #7dd3fc;
+  --portfolio-accent-strong: #2563eb;
+  --portfolio-accent-contrast: #03111f;
+  --portfolio-border: rgba(125, 211, 252, 0.12);
+  --portfolio-border-strong: rgba(125, 211, 252, 0.16);
+  --portfolio-button-bg: #173464;
+  --portfolio-button-hover: #1f4583;
+  --portfolio-field-bg: #0d2344;
+  --portfolio-field-border: #27548a;
+  --portfolio-skill-track: #183765;
+  --portfolio-shadow: 0 25px 70px rgba(2, 12, 27, 0.45);
+  --portfolio-glass: rgba(12, 31, 59, 0.84);
+  --portfolio-glass-item: rgba(125, 211, 252, 0.08);
+  --portfolio-highlight-soft: rgba(125, 211, 252, 0.22);
+  --portfolio-highlight-strong: rgba(37, 99, 235, 0.2);
+  --portfolio-outline-soft: rgba(125, 211, 252, 0.12);
+  --portfolio-project-image: linear-gradient(
+    135deg,
+    rgba(125, 211, 252, 0.28),
+    rgba(37, 99, 235, 0.24)
+  );
+  --portfolio-cta-gradient: linear-gradient(135deg, #7dd3fc, #2563eb);
 }
 
 a {
@@ -32,4 +149,10 @@ button,
 input,
 textarea {
   font-family: inherit;
+}
+
+.portfolio-page {
+  min-height: 100vh;
+  background: var(--portfolio-bg);
+  color: var(--portfolio-text);
 }

@@ -12,6 +12,8 @@ function Sidebar() {
         <NavLink to="/admin/profile">Manage Profile</NavLink>
         <NavLink to="/admin/projects">Manage Projects</NavLink>
         <NavLink to="/admin/skills">Manage Skills</NavLink>
+        <NavLink to="/admin/experience">Manage Experience</NavLink>
+        <NavLink to="/admin/certifications">Manage Certifications</NavLink>
         <NavLink to="/admin/resume">Manage Resume</NavLink>
         <NavLink to="/admin/contact">Contact Details</NavLink>
         <NavLink to="/admin/theme">Theme Settings</NavLink>

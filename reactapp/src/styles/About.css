@@ -1,5 +1,5 @@
 .about {
-  background: #0f1730;
+  background: var(--portfolio-surface-alt);
 }
 
 .about__grid {
@@ -14,7 +14,7 @@
 }
 
 .about__left p {
-  color: #bcc9e2;
+  color: var(--portfolio-text-muted);
   line-height: 1.9;
   margin-bottom: 16px;
 }
@@ -25,20 +25,24 @@
 }
 
 .about__card {
-  background: #131d3b;
-  padding: 20px;
+  background: var(--portfolio-card-alt);
+  padding: 24px 22px;
   border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid var(--portfolio-border);
 }
 
 .about__card h4 {
-  color: #67e8f9;
+  color: var(--portfolio-accent);
   margin-bottom: 8px;
+  line-height: 1.35;
 }
 
 .about__card p {
-  color: #dce5f8;
+  color: var(--portfolio-text-card);
   line-height: 1.6;
+  margin: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 @media (max-width: 900px) {

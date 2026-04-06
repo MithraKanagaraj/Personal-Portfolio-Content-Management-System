@@ -1,7 +1,15 @@
-
 package com.example.springapp.entity;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "contact_messages")
@@ -18,20 +26,50 @@ public class ContactMessage {
     private String message;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnoreProperties({"password"})
     private User user;
 
-    public ContactMessage() {}
+    public ContactMessage() {
+    }
 
-    public Long getId() { return id; }
-    public String getSenderName() { return senderName; }
-    public String getSenderEmail() { return senderEmail; }
-    public String getMessage() { return message; }
-    public User getUser() { return user; }
+    public Long getId() {
+        return id;
+    }
 
-    public void setId(Long id) { this.id = id; }
-    public void setSenderName(String senderName) { this.senderName = senderName; }
-    public void setSenderEmail(String senderEmail) { this.senderEmail = senderEmail; }
-    public void setMessage(String message) { this.message = message; }
-    public void setUser(User user) { this.user = user; }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getSenderName() {
+        return senderName;
+    }
+
+    public void setSenderName(String senderName) {
+        this.senderName = senderName;
+    }
+
+    public String getSenderEmail() {
+        return senderEmail;
+    }
+
+    public void setSenderEmail(String senderEmail) {
+        this.senderEmail = senderEmail;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

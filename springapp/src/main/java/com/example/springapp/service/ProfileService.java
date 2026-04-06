@@ -1,12 +1,12 @@
 package com.example.springapp.service;
 
-
-
-import com.example.springapp.dto.ProfileRequest;
-import com.example.springapp.dto.ProfileResponse;
+import com.example.springapp.entity.Profile;
 
 public interface ProfileService {
-    ProfileResponse createOrUpdateProfile(ProfileRequest request, String email);
-    ProfileResponse getMyProfile(String email);
-    ProfileResponse getPublicProfile(String username);
+
+    Profile createOrUpdateProfile(Profile profile, String email);
+
+    Profile getMyProfile(String email);
+
+    Profile getPublicProfile(String username);
 }
